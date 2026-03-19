@@ -8,9 +8,11 @@ usando la version de angular 19.2.22
 puedes descargar el proyecto desde este directorio github
 https://github.com/abicornejo/productos-financieros-angular
 
+## Pruebas Unitarias
 para correr las pruebas unitarias podemos usar los siguientes comandos
 opcion 1
     npx ng test --watch=false
+    
 opcion 2
     ng test
 
