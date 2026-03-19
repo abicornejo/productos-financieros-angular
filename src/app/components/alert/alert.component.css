@@ -1,0 +1,49 @@
+.alert {
+    min-width: 250px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+}
+
+/* tipos */
+.success {
+    background: #28a745;
+}
+
+.error {
+    background: #dc3545;
+}
+
+.warning {
+    background: #ffc107;
+    color: #000;
+}
+
+.info {
+    background: #17a2b8;
+}
+
+/* botón */
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* animación */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

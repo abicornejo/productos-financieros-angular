@@ -1,0 +1,135 @@
+/* General container styling */
+.form-container {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    /* Adjust max-width as needed */
+    margin: 40px auto;
+    /* Center the form */
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Grid layout for form fields */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+    gap: 20px;
+    /* Space between grid items */
+    margin-bottom: 30px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #007bff;
+    /* Highlight color on focus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Styling for invalid inputs */
+.invalid-input {
+    border-color: #dc3545 !important;
+    /* Red border for invalid fields */
+}
+
+.error-message,
+.error {
+    color: #dc3545;
+    /* Red color for error text */
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Styling for the date input specifically */
+input[type="date"] {
+    /* You might need to adjust styling for date inputs as they can be tricky across browsers */
+    /* Example: */
+    color: #555;
+    /* Default text color */
+}
+
+/* Date input specific styling for when a date is selected */
+input[type="date"]:valid {
+    color: #333;
+    /* Darker text when a valid date is selected */
+}
+
+
+/* Action buttons */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    /* Align buttons to the right */
+    gap: 15px;
+    /* Space between buttons */
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.primary {
+    background: #f2d74c;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}

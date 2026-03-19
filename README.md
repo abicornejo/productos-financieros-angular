@@ -2,6 +2,15 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.22.
 
+Este proyecto es una prueba tecnica desarrollada por Lorenzo Abraham Cornejo Ortiz (abicornejo@gmail.com)
+usando la version de angular 19.2.22
+
+para correr las pruebas unitarias podemos usar los siguientes comandos
+opcion 1
+    npx ng test --watch=false
+opcion 2
+    ng test
+
 ## Development server
 
 To start a local development server, run:

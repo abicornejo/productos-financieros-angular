@@ -1,0 +1,57 @@
+<div class="container" (click)="closeMenu()">
+    <h2 class="title">💳 BANCO</h2>
+
+    <div class="toolbar">
+        <app-product-search (resultadosBusqueda)="onInputSearch($event)"></app-product-search>
+        <button class="btn-add" routerLink="/agregar-producto/ ">Agregar</button>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Nombre del producto</th>
+                <th>Descripción</th>
+                <th>Fecha de liberación</th>
+                <th>Fecha de revición</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody *ngIf="!cargando; else skeleton">
+            <tr *ngFor="let item of paginatedProductos; let i = index">
+                <td>
+                    <div class="avatar">{{ item.logo }}</div>
+                </td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.date_release }}</td>
+                <td>{{ item.date_revision }}</td>
+                <td class="menu-cell">
+                    <button class="menu-btn" (click)="toggleMenu(i, $event)">⋮</button>
+
+                    <div class="dropdown" *ngIf="openMenuIndex === i;">
+                        <button (click)="edit(item)">Editar</button>
+                        <button class="delete" (click)="delete(item, i)">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <ng-template #skeleton>
+            <tr *ngFor="let i of [1,2,3,4,5]">
+                <td colspan="6">
+                    <div class="skeleton-row"></div>
+                </td>
+            </tr>
+        </ng-template>
+    </table>
+
+    <!-- FOOTER / PAGINACIÓN -->
+    <app-product-pagination [totalRows]="totalItems" [rowsByPage]="pageSize"
+        (cambioRegistrosPorPagina)="onChangeRowsByPage($event)"
+        (cambioPagina)="onChangePage($event)"></app-product-pagination>
+</div>
+
+<!-- MODAL ELIMINAR -->
+<app-confirm-delete-modal [showModal]="showModal" [productoNombre]="productoAEliminar?.name" (cancelar)="closeModal()"
+    (confirmar)="confirmarEliminacion()"></app-confirm-delete-modal>

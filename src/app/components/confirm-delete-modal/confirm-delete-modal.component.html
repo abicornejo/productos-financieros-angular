@@ -1,0 +1,10 @@
+<div class="modal-backdrop" *ngIf="showModal">
+    <div class="modal" role="dialog" aria-modal="true">
+        <p>¿Estas seguro de eliminar el producto {{ productoNombre }}?</p>
+
+        <div class="modal-actions">
+            <button class="btn-cancel" type="button" (click)="cancelar.emit()">Cancelar</button>
+            <button class="btn-confirm" type="button" (click)="confirmar.emit()">Confirmar</button>
+        </div>
+    </div>
+</div>

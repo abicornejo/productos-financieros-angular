@@ -1,0 +1,74 @@
+<div class="form-container">
+    <h2>Formulario de Registro</h2>
+
+    <form [formGroup]="productForm" novalidate>
+        <div class="form-grid">
+            <!-- ID Field -->
+            <div class="form-field">
+                <label for="id">ID</label>
+                <input type="text" id="id" formControlName="id" />
+                <div class="error" *ngIf="productForm.get('id')?.touched && productForm.get('id')?.invalid">
+                    <span *ngIf="productForm.get('id')?.errors?.['required']">El ID es obligatorio</span>
+                    <span *ngIf="productForm.get('id')?.errors?.['minlength']">Debe tener al menos 3 caracteres</span>
+                    <span *ngIf="productForm.get('id')?.errors?.['maxlength']">No puede tener más de 10
+                        caracteres</span>
+                </div>
+                <span class="error" *ngIf="showDuplicatedId === true">El ID ya existe, favor de agregar un valor
+                    diferente</span>
+            </div>
+
+            <!-- Nombre Field -->
+            <div class="form-field">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="name" formControlName="name" />
+                <div class="error" *ngIf="productForm.get('name')?.touched && productForm.get('name')?.invalid">
+                    <span *ngIf="productForm.get('name')?.errors?.['required']">El Nombre es obligatorio</span>
+                    <span *ngIf="productForm.get('name')?.errors?.['minlength']">Debe tener al menos 5
+                        caracteres</span>
+                    <span *ngIf="productForm.get('name')?.errors?.['maxlength']">No puede tener más de 100
+                        caracteres</span>
+                </div>
+            </div>
+
+            <!-- Descripción Field -->
+            <div class="form-field">
+                <label for="description">Descripción</label>
+                <input type="text" id="description" formControlName="description" />
+                <div class="error"
+                    *ngIf="productForm.get('description')?.touched && productForm.get('description')?.invalid">
+                    <span *ngIf="productForm.get('name')?.errors?.['required']">Description es obligatoria</span>
+                    <span *ngIf="productForm.get('name')?.errors?.['minlength']">Debe tener al menos 10
+                        caracteres</span>
+                    <span *ngIf="productForm.get('name')?.errors?.['maxlength']">No puede tener más de 200
+                        caracteres</span>
+                </div>
+            </div>
+
+            <!-- Logo Field -->
+            <div class="form-field">
+                <label for="logo">Logo</label>
+                <input type="text" id="logo" formControlName="logo" />
+                <div class="error" *ngIf="productForm.get('logo')?.touched && productForm.get('logo')?.invalid">
+                    <span *ngIf="productForm.get('logo')?.errors?.['required']">EL logo es obligatoria</span>
+                </div>
+            </div>
+
+            <!-- Fecha Liberación Field -->
+            <div class="form-field">
+                <label for="date_release">Fecha Liberación</label>
+                <input type="date" id="date_release" formControlName="date_release" [min]="today" />
+            </div>
+
+            <!-- Fecha Revisión Field -->
+            <div class="form-field">
+                <label for="date_revision">Fecha Revisión</label>
+                <input type="date" id="date_revision" formControlName="date_revision" readonly />
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-secondary" (click)="resetForm()">Reiniciar</button>
+            <button class="btn btn-primary primary" [disabled]="isValidForm()" (click)="saveProduct()">Enviar</button>
+        </div>
+    </form>
+</div>
