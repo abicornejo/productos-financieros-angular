@@ -5,6 +5,9 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 Este proyecto es una prueba tecnica desarrollada por Lorenzo Abraham Cornejo Ortiz (abicornejo@gmail.com)
 usando la version de angular 19.2.22
 
+puedes descargar el proyecto desde este directorio github
+https://github.com/abicornejo/productos-financieros-angular
+
 para correr las pruebas unitarias podemos usar los siguientes comandos
 opcion 1
     npx ng test --watch=false
