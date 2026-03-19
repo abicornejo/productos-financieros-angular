@@ -11,10 +11,14 @@ https://github.com/abicornejo/productos-financieros-angular
 ## Pruebas Unitarias
 para correr las pruebas unitarias podemos usar los siguientes comandos
 opcion 1
-    npx ng test --watch=false
-    
+```bash
+npx ng test --watch=false
+```
+
 opcion 2
-    ng test
+```bash
+ng test
+```
 
 ## Development server
 
